@@ -13,15 +13,17 @@
 # slash_h1 = open + slash + "h1" + close
 
 
-def mark_up(content):
-    open = "<"
-    close = ">"
-    slash = "/"
+def mark_up(isopen ,content):
+    bracket = ["<", ">", "/"]
+    
+    if isopen == "open":
+        def open_mark_up():
+            keyword = bracket[0] + content + bracket[1]
             
-    def open_mark_up(content):
-        keyword = open + content + close
-        print(keyword)
-
-    def close_mark_up(content):
-        keyword = open + slash + content + close
-        print(keyword)
+            return keyword
+    else:
+        def close_mark_up():
+            keyword = bracket[0] + bracket[2] + content + bracket[0]
+            
+            return keyword
+        
